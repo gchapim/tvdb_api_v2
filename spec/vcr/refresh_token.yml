@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.thetvdb.com/refresh_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTYwOTA5NTQsImlkIjoiTmV0c2VyaWVzIiwib3JpZ19pYXQiOjE0OTYwMDQ1NTR9.GtNGgdpMAHNaTvDxLU9JjReAVkWNdP9dhn85BPAeu0COAgaiuAkoT5RL3b8HaCz92C8oD7_t3w-MRyzX5pJEo3JwrOTQNIAqHjzgfzhusjPEci2kWzmyFjXlwSKb2OFXuuArmeooJuM76-ip9Fgrlnh773aL4a_Uniuy6PCFAqSF8jw_-_XYNhQZ2LZnVMedErObeowIUQqILtPGLF1Uxs5tYDrTAzNg97EQM7wrKMgU3VEAsEhLmntieqGlO-Z3iIm4tYIWh_IeG4bCK0BszkT1l37wn3ZBn5beD8bbsUL9yorGPAPyXw0G4O2KcqxtpDBsCIxZYOt8EyDz9I4BYQ
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 May 2017 22:23:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '473'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d77ced6635fa5925a71ca3fe74e3a3b521496010222; expires=Mon, 28-May-18
+        22:23:42 GMT; path=/; domain=.thetvdb.com; HttpOnly
+      Cache-Control:
+      - private, max-age=600
+      Vary:
+      - Accept-Language
+      X-Powered-By:
+      - Thundar!
+      X-Thetvdb-Api-Version:
+      - 2.1.2
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 36649eb07aa54c24-GRU
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTYwOTY2MjIsImlkIjoiTmV0c2VyaWVzIiwib3JpZ19pYXQiOjE0OTYwMDQ1NTR9.b9qByprTL9vntrpMBTs19Kn7UOLS6kiRsz8H_LMB6Q9UAzx7lP4Fj7lo4OmHNFrY6dOdArE5a873yC3SdewNF_ULWhLtqVv1HPBtFy0jcnZxtKvYOiEklBlF_oHFblgIHS7znA-zL0LzNbJU6iVGDDQS-7A-az6LIFed0nzeqFh3KOrCACx5yB2pTzsMJp4Jktsye1TqlbbCeCRQAzWjSTg7zBA-J5dak-m9Wela4YJhC4NxPNCY_B1jKYh0V3Do67MvSOLJFMv_cZJ5ZZTrZYIJPbpHTe_L-aa1XrP4Iy5QzZ-Y_1cQV8kmsPSl4oTi9ZXukR-3VnxT1z0Mj9Ftdw"
+        }
+    http_version: 
+  recorded_at: Sun, 28 May 2017 22:23:42 GMT
+recorded_with: VCR 3.0.3
