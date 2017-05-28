@@ -57,6 +57,9 @@ RSpec.describe TvdbApiWrapper do
     end
 
     context 'given an invalid token' do
+      before { VCR.turn_off! }
+      after { VCR.turn_on! }
+
       it 'raises UnauthorizedError' do
         stub_request(:post, 'https://api.thetvdb.com/refresh_token').to_return({ status: 401 })
 
