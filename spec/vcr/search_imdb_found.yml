@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.thetvdb.com/search/series?imdbId=tt5834204
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTYwOTA4NDksImlkIjoiTmV0c2VyaWVzIiwib3JpZ19pYXQiOjE0OTYwMDQ0NDl9.UQjbx249rlQpMXqWOGoLaINizVfrh46dt2xJ5PZfjB7s_m9npMZBHmNeka8qD-NS_NnBIB3Juu4NrNhyXn74LszQpel7k8auqu2nOzSsmW2y5xJibl0EAPHo-0D_xuqm-U783OlgBenyuR-EfzK6rZ7qNW0zbGQMKB083vguUzAMib7QI9H2HdTFq4RHf6HhgHVQvnGIrDCcX82ET5plMBAwGRsWdE58kjfexihE2TfHeVaI5i8NuARrFq6xtbOzLjgx_-8vxQGMRXJEb9kibi-Nto22QHTNmBAVhubaAiwjL6DxmXThs6t8uyNr9ZW4JoCpa80B4vqYqDJ1A_8eMQ
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 29 May 2017 14:06:46 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '839'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=debcec899f7fbf5e9ce50197eba692ffd1496066805; expires=Tue, 29-May-18
+        14:06:45 GMT; path=/; domain=.thetvdb.com; HttpOnly
+      Cache-Control:
+      - private, max-age=600
+      Vary:
+      - Accept-Language
+      X-Powered-By:
+      - Thundar!
+      X-Thetvdb-Api-Version:
+      - 2.1.2
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 366a041e983c4bf9-GRU
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJkYXRhIjogWwogICAgewogICAgICAiYWxpYXNlcyI6IFtdLAogICAgICAiYmFubmVyIjogImdyYXBoaWNhbC8zMjEyMzktZzIuanBnIiwKICAgICAgImZpcnN0QWlyZWQiOiAiMjAxNy0wNC0yNiIsCiAgICAgICJpZCI6IDMyMTIzOSwKICAgICAgIm5ldHdvcmsiOiAiSHVsdSIsCiAgICAgICJvdmVydmlldyI6ICJJbiBhIGR5c3RvcGlhbiBuZWFyLWZ1dHVyZSwgdGhlIHRvdGFsaXRhcmlhbiBhbmQgQ2hyaXN0aWFuLWZ1bmRhbWVudGFsaXN0IGdvdmVybm1lbnQgb2YgR2lsZWFkIHJ1bGVzIHRoZSBmb3JtZXIgVW5pdGVkIFN0YXRlcyBhbWlkc3QgYW4gb25nb2luZyBjaXZpbCB3YXIgYW5kIHN1Ymp1Z2F0ZXMgd29tZW4sIHdobyBhcmUgbm90IGFsbG93ZWQgdG8gd29yaywgY29udHJvbCBtb25leSwgb3IgZXZlbiByZWFkLiBXaWRlc3ByZWFkIGluZmVydGlsaXR5IGR1ZSB0byBlbnZpcm9ubWVudGFsIGNvbnRhbWluYXRpb24gaGFzIHJlc3VsdGVkIGluIHRoZSBjb25zY3JpcHRpb24gb2YgeW91bmcgZmVydGlsZSB3b21lbuKAlGNhbGxlZCBIYW5kbWFpZHMsIGFjY29yZGluZyB0byBiaWJsaWNhbCBwcmVjZWRlbnTigJR3aG8gYXJlIGFzc2lnbmVkIHRvIHRoZSBob21lcyBvZiB0aGUgZWxpdGUsIHdoZXJlIHRoZXkgbXVzdCBoYXZlIHJpdHVhbGl6ZWQgc2V4IHdpdGggdGhlIG1lbiBpbiBvcmRlciB0byBiZWNvbWUgcHJlZ25hbnQgYW5kIGJlYXIgY2hpbGRyZW4gZm9yIHRob3NlIG1lbiBhbmQgdGhlaXIgd2l2ZXMuIiwKICAgICAgInNlcmllc05hbWUiOiAiVGhlIEhhbmRtYWlkJ3MgVGFsZSIsCiAgICAgICJzdGF0dXMiOiAiQ29udGludWluZyIKICAgIH0KICBdCn0=
+    http_version: 
+  recorded_at: Mon, 29 May 2017 14:06:48 GMT
+recorded_with: VCR 3.0.3

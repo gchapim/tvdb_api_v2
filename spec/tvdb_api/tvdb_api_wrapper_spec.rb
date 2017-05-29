@@ -78,7 +78,7 @@ RSpec.describe TvdbApiWrapper do
               "h_IeG4bCK0BszkT1l37wn3ZBn5beD8bbsUL9yorGPAPyXw0G4O2KcqxtpDBsCIxZYOt8EyDz9I4BYQ"
 
         VCR.use_cassette('search_found') do
-          json = TvdbApiWrapper.call_action(:search_by_name, token, {name: 'Doctor Who'})
+          json = TvdbApiWrapper.call_action(:search, token, {name: 'Doctor Who'})
           expect(json).to be_present
           expect(json).to be_a(Hash)
         end
@@ -97,6 +97,22 @@ RSpec.describe TvdbApiWrapper do
           new_token = TvdbApiWrapper.call_action(:refresh_token, token)
           expect(new_token).to be_present
           expect(new_token).to_not be_eql(token)
+        end
+      end
+    end
+
+    context 'given a id string as param' do
+      it 'returns correctly' do
+        token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTYwOTA5NTQsImlkIjoiTmV0c2VyaWVzIiwib3JpZ19p" +
+              "YXQiOjE0OTYwMDQ1NTR9.GtNGgdpMAHNaTvDxLU9JjReAVkWNdP9dhn85BPAeu0COAgaiuAkoT5RL3b8HaCz92C8oD7_t" +
+              "3w-MRyzX5pJEo3JwrOTQNIAqHjzgfzhusjPEci2kWzmyFjXlwSKb2OFXuuArmeooJuM76-ip9Fgrlnh773aL4a_Uniuy6" +
+              "PCFAqSF8jw_-_XYNhQZ2LZnVMedErObeowIUQqILtPGLF1Uxs5tYDrTAzNg97EQM7wrKMgU3VEAsEhLmntieqGlO-Z3iIm4tYIW" +
+              "h_IeG4bCK0BszkT1l37wn3ZBn5beD8bbsUL9yorGPAPyXw0G4O2KcqxtpDBsCIxZYOt8EyDz9I4BYQ"
+
+        VCR.use_cassette('series_info') do
+          json = TvdbApiWrapper.call_action(:series, token, '78804')
+          expect(json).to be_present
+          expect(json).to be_a(Hash)
         end
       end
     end

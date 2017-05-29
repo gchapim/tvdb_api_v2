@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.thetvdb.com/search/series?imdbId=asjoasij
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTYwOTA4NDksImlkIjoiTmV0c2VyaWVzIiwib3JpZ19pYXQiOjE0OTYwMDQ0NDl9.UQjbx249rlQpMXqWOGoLaINizVfrh46dt2xJ5PZfjB7s_m9npMZBHmNeka8qD-NS_NnBIB3Juu4NrNhyXn74LszQpel7k8auqu2nOzSsmW2y5xJibl0EAPHo-0D_xuqm-U783OlgBenyuR-EfzK6rZ7qNW0zbGQMKB083vguUzAMib7QI9H2HdTFq4RHf6HhgHVQvnGIrDCcX82ET5plMBAwGRsWdE58kjfexihE2TfHeVaI5i8NuARrFq6xtbOzLjgx_-8vxQGMRXJEb9kibi-Nto22QHTNmBAVhubaAiwjL6DxmXThs6t8uyNr9ZW4JoCpa80B4vqYqDJ1A_8eMQ
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Mon, 29 May 2017 14:06:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '35'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=db041593528c9bedcb3ece09968ec22001496066804; expires=Tue, 29-May-18
+        14:06:44 GMT; path=/; domain=.thetvdb.com; HttpOnly
+      Cache-Control:
+      - private, max-age=600
+      Vary:
+      - Accept-Language
+      X-Powered-By:
+      - Thundar!
+      X-Thetvdb-Api-Version:
+      - 2.1.2
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 366a04182d9b4c1e-GRU
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "Error": "Resource not found"
+        }
+    http_version: 
+  recorded_at: Mon, 29 May 2017 14:06:47 GMT
+recorded_with: VCR 3.0.3

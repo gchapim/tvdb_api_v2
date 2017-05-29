@@ -27,12 +27,20 @@ class TvdbApiWrapper
   end
 
   def self.get_response(action, token, params=nil)
-    params = params.to_h if params.present?
-    response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}",
+    params = params.to_h if params.present? && params.respond_to?(:to_h)
+
+    if params.blank? || params.is_a?(Hash)
+      response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}",
                              { headers: { "Content-Type": "application/json",
                                          "Accept": "application/json",
                                          "Authorization": "Bearer #{token.to_s}"},
                                query: params})
+    else
+      response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}#{params.to_s}",
+                             { headers: { "Content-Type": "application/json",
+                                         "Accept": "application/json",
+                                         "Authorization": "Bearer #{token.to_s}"}})
+    end
   end
 
   def self.token_from_response(response)
