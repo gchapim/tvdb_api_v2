@@ -1,32 +1,32 @@
 class Show
 
-  attr_accessor :name, :banner, :firstAired, :id, :network, :overview, :status, :runtime,
-                :genre, :lastUpdated, :airsDayOfWeek, :airsTime, :rating, :imdbId, :zap2itId,
-                :added, :addedBy, :siteRating, :siteRatingCount
+  attr_accessor :name, :banner, :first_aired, :id, :network, :overview, :status, :runtime,
+                :genre, :last_updated, :airs_day_of_week, :airs_time, :rating, :imdb_id, :zap2it_id,
+                :added, :added_by, :site_rating, :site_rating_count
 
-  def initialize(id, name, banner=nil, firstAired=nil, network=nil, overview=nil, status=nil,
-                runtime=nil, genre=nil, lastUpdated=nil, airsDayOfWeek=nil, airsTime=nil,
-                rating=nil, imdbId=nil, zap2itId=nil, added=nil, addedBy=nil, siteRating=nil,
-                siteRatingCount=nil)
+  def initialize(id, name, banner=nil, first_aired=nil, network=nil, overview=nil, status=nil,
+                runtime=nil, genre=nil, last_updated=nil, airs_day_of_week=nil, airs_time=nil,
+                rating=nil, imdb_id=nil, zap2it_id=nil, added=nil, added_by=nil, site_rating=nil,
+                site_rating_count=nil)
     @id = id
     @name = name
     @banner = banner
-    @firstAired = firstAired
+    @first_aired = first_aired
     @network = network
     @overview = overview
     @status = status
     @runtime = runtime
     @genre = genre
-    @lastUpdated = lastUpdated
-    @airsDayOfWeek = airsDayOfWeek
-    @airsTime = airsTime
+    @last_updated = last_updated
+    @airs_day_of_week = airs_day_of_week
+    @airs_time = airs_time
     @rating = rating
-    @imdbId = imdbId
-    @zap2itId = zap2itId
+    @imdb_id = imdb_id
+    @zap2it_id = zap2it_id
     @added = added
-    @addedBy = addedBy
-    @siteRating = siteRating
-    @siteRatingCount = siteRatingCount
+    @added_by = added_by
+    @site_rating = site_rating
+    @site_rating_count = site_rating_count
   end
 
   def self.create(data)

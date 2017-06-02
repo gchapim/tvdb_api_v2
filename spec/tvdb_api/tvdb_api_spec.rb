@@ -148,7 +148,7 @@ RSpec.describe TvdbApi do
       it "is fully filled" do
         VCR.use_cassette('info_id_found') do
           search = subject.get_series_info("78804")
-          expect(search.lastUpdated).to be_present
+          expect(search.last_updated).to be_present
         end
       end
     end
