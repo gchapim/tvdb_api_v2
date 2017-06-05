@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.thetvdb.com/login
+    body:
+      encoding: UTF-8
+      string: '{"apikey":"61D6EC4CCA8DEB19"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 05 Jun 2017 21:55:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '473'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d741bb18e6e7e1fa4e60b4539ef62bf551496699756; expires=Tue, 05-Jun-18
+        21:55:56 GMT; path=/; domain=.thetvdb.com; HttpOnly
+      Vary:
+      - Accept-Language
+      X-Powered-By:
+      - Thundar!
+      X-Thetvdb-Api-Version:
+      - 2.1.2
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 36a661068b144c84-GRU
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTY3ODYxNTcsImlkIjoiTmV0c2VyaWVzIiwib3JpZ19pYXQiOjE0OTY2OTk3NTd9.wgpPPhGcmF1dal6bRQGSPSMG8LzbukjPrJ7k_PLitdFdKZnTde8IRM34NXjSgXGf8_-v6VTobYVvp0oUtgAwCes5RQWjHq6CxQQP3C8lpxaDj--LIvmCbSe2ALXtqfoV9jr6ZklEERVSuzm1aWTynQdgPTbnKy0wqhFdm4jQ1JEkGqblX7DueJdUAIS7Yz9u6XJZrSZAJgEZgLuCWhC-gOYpVNtu3fR-fxGN2LwwCuD8m2A0KTFV9vbXCQid-uKG4I4tGlNs2qQczbLZJBMbsHgqG5mL-x-QZWL2FBCIkwhw3tk-QROvI1vZijnksLIEvtNM0iLZK0MvNIHBCcYPbg"
+        }
+    http_version: 
+  recorded_at: Mon, 05 Jun 2017 21:56:00 GMT
+recorded_with: VCR 3.0.3

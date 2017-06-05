@@ -128,7 +128,7 @@ RSpec.describe TvdbApi do
       end
     end
 
-    context "given an inexistent id" do
+    context "given a nonexistent id" do
       it "returns nil" do
         VCR.use_cassette('info_id_not_found') do
           expect(subject.get_series_info('asjoasij')).to be_nil
@@ -149,6 +149,43 @@ RSpec.describe TvdbApi do
         VCR.use_cassette('info_id_found') do
           search = subject.get_series_info("78804")
           expect(search.last_updated).to be_present
+        end
+      end
+    end
+  end
+
+  describe "#get_series_episodes" do
+    subject do
+      TvdbApi.new("61D6EC4CCA8DEB19")
+    end
+
+    before do
+      VCR.use_cassette('get_series_episodes_valid_token') do
+        subject.load_token
+      end
+    end
+
+    context "given a blank series id" do
+      it "raises ArgumentError" do
+        expect { subject.get_series_episodes(' ') }.to raise_error(ArgumentError)
+        expect { subject.get_series_episodes(nil) }.to raise_error(ArgumentError)
+      end
+    end
+
+    context "given a nonexistent id" do
+      it "returns nil" do
+        VCR.use_cassette("get_series_episodes_nonexistent") do
+          expect(subject.get_series_episodes("ijfsofi")).to be_nil
+        end
+      end
+    end
+
+    context "given a correct id" do
+      it "returns episodes" do
+        VCR.use_cassette("get_series_episodes_valid_id") do
+          episodes = subject.get_series_episodes("78804")
+          expect(episodes).to be_present
+          expect(episodes.first).to be_a(Episode)
         end
       end
     end
