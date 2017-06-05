@@ -11,9 +11,9 @@ class TvdbApiWrapper
     token_from_response(response)
   end
 
-  def self.call_action(action, token, params=nil)
+  def self.call_action(action, token, params=nil, subaction=nil)
     raise ArgumentError, 'token must be filled' if token.blank?
-    response = get_response(action, token, params)
+    response = get_response(action, token, params, subaction)
     json_from_response(response)
   end
 
@@ -26,9 +26,8 @@ class TvdbApiWrapper
                                          "Accept": "application/json"}})
   end
 
-  def self.get_response(action, token, params=nil)
+  def self.get_response(action, token, params=nil, subaction=nil)
     params = params.to_h if params.present? && params.respond_to?(:to_h)
-
     if params.blank? || params.is_a?(Hash)
       response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}",
                              { headers: { "Content-Type": "application/json",
@@ -36,10 +35,17 @@ class TvdbApiWrapper
                                          "Authorization": "Bearer #{token.to_s}"},
                                query: params})
     else
-      response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}#{params.to_s}",
+      if subaction.blank?
+        response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}#{params.to_s}",
                              { headers: { "Content-Type": "application/json",
                                          "Accept": "application/json",
                                          "Authorization": "Bearer #{token.to_s}"}})
+      else
+        response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}#{params.to_s}/#{subaction.to_s}",
+                             { headers: { "Content-Type": "application/json",
+                                         "Accept": "application/json",
+                                         "Authorization": "Bearer #{token.to_s}"}})
+      end
     end
   end
 

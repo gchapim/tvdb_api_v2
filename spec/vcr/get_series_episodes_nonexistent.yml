@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.thetvdb.com/series/ijfsofi/episodes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTY3ODYxNTcsImlkIjoiTmV0c2VyaWVzIiwib3JpZ19pYXQiOjE0OTY2OTk3NTd9.wgpPPhGcmF1dal6bRQGSPSMG8LzbukjPrJ7k_PLitdFdKZnTde8IRM34NXjSgXGf8_-v6VTobYVvp0oUtgAwCes5RQWjHq6CxQQP3C8lpxaDj--LIvmCbSe2ALXtqfoV9jr6ZklEERVSuzm1aWTynQdgPTbnKy0wqhFdm4jQ1JEkGqblX7DueJdUAIS7Yz9u6XJZrSZAJgEZgLuCWhC-gOYpVNtu3fR-fxGN2LwwCuD8m2A0KTFV9vbXCQid-uKG4I4tGlNs2qQczbLZJBMbsHgqG5mL-x-QZWL2FBCIkwhw3tk-QROvI1vZijnksLIEvtNM0iLZK0MvNIHBCcYPbg
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Mon, 05 Jun 2017 22:58:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '69'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd7a129b9127103d7ec3cd4cbba1ce2ea1496703493; expires=Tue, 05-Jun-18
+        22:58:13 GMT; path=/; domain=.thetvdb.com; HttpOnly
+      Cache-Control:
+      - private, max-age=600
+      Vary:
+      - Accept-Language
+      X-Powered-By:
+      - Thundar!
+      X-Thetvdb-Api-Version:
+      - 2.1.2
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 36a6bc41c9574a18-GRU
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "Error": "No results for your query: map[tve.seriesId:ijfsofi]"
+        }
+    http_version: 
+  recorded_at: Mon, 05 Jun 2017 22:58:17 GMT
+recorded_with: VCR 3.0.3

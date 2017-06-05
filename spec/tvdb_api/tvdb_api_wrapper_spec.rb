@@ -116,5 +116,21 @@ RSpec.describe TvdbApiWrapper do
         end
       end
     end
+
+    context 'given a search with subaction' do
+      it 'returns correctly' do
+        token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTY3ODUxODgsImlkIjoiTmV0c2VyaWVzIiwib3JpZ19" +
+              "pYXQiOjE0OTY2OTg3ODh9.zum52vLK3p2UO2Qa4R72TLT_3nnql95uLrBtlHoUX5D9CUeNB6vNNZhvmoewRZPMGIctyUdl" +
+              "jpSQGz8UnVHQK03LuoFi8ZhBKF8mLpbgWmzLNAMc1l_UPiYsQgjSgo98_KSl8qPOtM4R7nzLbk7n6Th8HrdlYiFOxBrihk" +
+              "q3ZEEv54rVkQOZhjkiTLr_z2nmioYLeRhk9t1YY0w36yN1EQsK-CsoqBe8V1Pf98ZKkvyiwEnBuLLRl3VRxSvxWEW028BG" +
+              "6XGOJD5e3UUUZuUBlk6kMzPuIE6RoVwB_9e-tNVYB2scQ4Zr2b_TpFERrofj_pbov8T6f0wTq0wEbYpaew"
+
+        VCR.use_cassette('call_action_list_episodes') do
+          json = TvdbApiWrapper.call_action(:series, token, '78804', :episodes)
+          expect(json).to be_present
+          expect(json).to be_a(Hash)
+        end
+      end
+    end
   end
 end

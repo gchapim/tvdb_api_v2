@@ -19,7 +19,7 @@ class Episode
 
   def self.create(data, series_id)
     episodes = data["data"]
-    return if episodes.blank || series_id.blank?
+    return if episodes.blank? || series_id.blank?
 
     case episodes
     when Hash
@@ -34,7 +34,7 @@ class Episode
     end
   end
 
-  def self.populate(episode)
+  def self.populate(episode, series_id)
     episode = Episode.new(episode["id"], series_id, episode["absoluteNumber"], episode["airedEpisodeNumber"], episode["airedSeason"],
                           episode["dvdEpisodeNumber"], episode["dvdSeason"], episode["episodeName"], episode["firstAired"],
                           episode["lastUpdated"], episode["overview"])
