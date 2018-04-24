@@ -6,6 +6,7 @@ class TvdbApi
     raise ArgumentError, 'api_key must be filled' if api_key.blank?
     @api_key = api_key
     @token = nil
+    load_token
   end
 
   def load_token
