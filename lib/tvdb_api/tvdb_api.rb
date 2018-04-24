@@ -57,9 +57,9 @@ class TvdbApi
 
     case type
     when :show
-      shows = Show.create(result) unless result.blank?
+      shows = TvdbShow.create(result) unless result.blank?
     when :episode
-      episodes = Episode.create(result, parameter) unless result.blank?
+      episodes = TvdbEpisode.create(result, parameter) unless result.blank?
     end
   end
 
