@@ -1,4 +1,4 @@
-class Show
+class TvdbShow
 
   attr_accessor :name, :banner, :first_aired, :id, :network, :overview, :status, :runtime,
                 :genre, :last_updated, :airs_day_of_week, :airs_time, :rating, :imdb_id, :zap2it_id,
@@ -47,7 +47,7 @@ class Show
   end
 
   def self.populate(show)
-    show = Show.new(show["id"].to_s, show["seriesName"].to_s, show["banner"], show["firstAired"],
+    show = TvdbShow.new(show["id"].to_s, show["seriesName"].to_s, show["banner"], show["firstAired"],
                     show["network"], show["overview"], show["status"], show["runtime"], show["genre"],
                     show["lastUpdated"], show["airsDayOfWeel"], show["rating"], show["imdbId"],
                     show["zap2itId"], show["added"], show["addedBy"], show["siteRating"], show["siteRatingCount"])
