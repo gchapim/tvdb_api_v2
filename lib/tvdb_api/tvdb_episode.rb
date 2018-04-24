@@ -1,4 +1,4 @@
-class Episode
+class TvdbEpisode
   attr_accessor :absolute_number, :aired_episode_number, :aired_season, :dvd_episode_number, :dvd_season, :episode_name,
                 :first_aired, :id, :last_updated, :overview, :serie_id
 
@@ -35,7 +35,7 @@ class Episode
   end
 
   def self.populate(episode, series_id)
-    episode = Episode.new(episode["id"], series_id, episode["absoluteNumber"], episode["airedEpisodeNumber"], episode["airedSeason"],
+    episode = TvdbEpisode.new(episode["id"], series_id, episode["absoluteNumber"], episode["airedEpisodeNumber"], episode["airedSeason"],
                           episode["dvdEpisodeNumber"], episode["dvdSeason"], episode["episodeName"], episode["firstAired"],
                           episode["lastUpdated"], episode["overview"])
   end
