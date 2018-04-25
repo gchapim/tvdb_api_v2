@@ -28,6 +28,10 @@ class TvdbApi
     manage_result(:episode, series_id)
   end
 
+  def get_series_poster(series_id)
+    manage_result(:image, series_id)  
+  end
+  
   private
 
   def manage_result(type, parameter, parameter_type=nil)
