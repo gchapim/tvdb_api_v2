@@ -47,7 +47,6 @@ class TvdbApiWrapper
                                            "Accept": "application/json",
                                            "Authorization": "Bearer #{token.to_s}",
                                            'Accept-Language': 'en'}})
-        en
         else
           response = HTTParty.get("#{TVDB_API_ADDRESS}#{ACTIONS[action.to_sym]}#{params.to_s}/#{subaction.to_s}",
                                { headers: { "Content-Type": "application/json",
