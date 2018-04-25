@@ -51,6 +51,10 @@ class TvdbApi
       subaction = :episodes
       params = parameter
       action = :series
+    when :image
+      subaction = :images
+      params = parameter
+      action = :series
     end
 
     result = call_action(action, token, params, subaction)
@@ -60,6 +64,8 @@ class TvdbApi
       shows = TvdbShow.create(result) unless result.blank?
     when :episode
       episodes = TvdbEpisode.create(result, parameter) unless result.blank?
+    when :image
+      result
     end
   end
 
