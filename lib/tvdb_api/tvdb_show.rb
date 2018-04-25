@@ -2,7 +2,7 @@ class TvdbShow
 
   attr_accessor :name, :banner, :first_aired, :id, :network, :overview, :status, :runtime,
                 :genre, :last_updated, :airs_day_of_week, :airs_time, :rating, :imdb_id, :zap2it_id,
-                :added, :added_by, :site_rating, :site_rating_count
+                :added, :added_by, :site_rating, :site_rating_count, :episodes
 
   def initialize(id, name, banner=nil, first_aired=nil, network=nil, overview=nil, status=nil,
                 runtime=nil, genre=nil, last_updated=nil, airs_day_of_week=nil, airs_time=nil,
@@ -27,6 +27,7 @@ class TvdbShow
     @added_by = added_by
     @site_rating = site_rating
     @site_rating_count = site_rating_count
+    @episodes = nil
   end
 
   def self.create(data)
